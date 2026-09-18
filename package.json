@@ -1,0 +1,22 @@
+{
+  "name": "prova-dev-fattor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prova tecnica Fattor: parser de CNAB 444 + consulta de status via API (login JWT). Backend Express/TypeScript + frontend React/TypeScript (Vite).",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev --workspace server",
+    "dev:web": "npm run dev --workspace web",
+    "dev": "concurrently -n server,web -c blue,green \"npm:dev:server\" \"npm:dev:web\"",
+    "build:server": "npm run build --workspace server",
+    "build:web": "npm run build --workspace web",
+    "build": "npm run build:server && npm run build:web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "license": "MIT"
+}

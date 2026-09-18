@@ -1,0 +1,181 @@
+:root {
+  --bg: #f5f6fa;
+  --card: #ffffff;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --primary: #2f6fed;
+  --primary-dark: #1f4fbf;
+  --border: #e2e5eb;
+  --ok: #157347;
+  --ok-bg: #e6f4ea;
+  --warn: #b45309;
+  --warn-bg: #fef3c7;
+  --err: #b42318;
+  --err-bg: #fde8e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.upload-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+  position: relative;
+}
+
+.dropzone:hover,
+.dropzone:focus-within {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.dropzone input[type='file'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.feedback {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.feedback.info {
+  background: #e8f0fe;
+  color: #1a4fa0;
+}
+
+.feedback.error {
+  background: var(--err-bg);
+  color: var(--err);
+}
+
+.results {
+  margin-top: 32px;
+}
+
+.summary {
+  color: var(--muted);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+th {
+  background: #fafbfc;
+  font-weight: 600;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td.access-key {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.82rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge.autorizada {
+  background: var(--ok-bg);
+  color: var(--ok);
+}
+
+.badge.cancelada,
+.badge.rejeitada,
+.badge.denegada {
+  background: var(--err-bg);
+  color: var(--err);
+}
+
+.badge.nao_encontrada {
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+
+.badge.erro {
+  background: var(--err-bg);
+  color: var(--err);
+}
